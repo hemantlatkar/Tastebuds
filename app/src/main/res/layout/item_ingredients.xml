@@ -1,0 +1,33 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:gravity="center">
+    <ImageView
+        android:id="@+id/ivIngredientImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/bg_rounded_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtIngredientName"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Ingredie"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/ivIngredientImage"
+        app:layout_constraintEnd_toEndOf="@id/ivIngredientImage"
+        app:layout_constraintStart_toStartOf="@id/ivIngredientImage"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
