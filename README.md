@@ -4,9 +4,9 @@
 
 ## 🚀 Features
 - Built using **Kotlin** and **MVVM** architecture
-- **Dagger Hilt** for dependency injectiongit init
+- **Dagger Hilt** for dependency injection
 - Fetches data via a **network call** instead of hardcoded data
-- Designed with a **visually appealing UI**
+- Designed with a **visually appealing UI**git pull origin main
 - Implements **JUnit, Mockito, and Espresso** for unit/UI testing
 
 ## 🛠 Built With
@@ -25,7 +25,7 @@
 - **Target SDK:** 35
 
 ## 📦 Application Release
-- [Download APK](#) – Latest Application Build
+- [Download APK](https://github.com/hemantlatkar/Tastebuds/blob/main/app/release/Tastebuds_Release_1.0.apk) – Latest Application Build
 
 ## 🎥 Application Demo
-- [View Demo](#) – App Walkthrough
+- [View Demo](https://drive.google.com/file/d/1aqe4CqZa-m1EMIXZSWEIqdmtrSyPxPLm/view?usp=drive_link) – App Walkthrough
