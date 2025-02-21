@@ -32,9 +32,9 @@
 ### **App Module**
 ```sh
 App (Module)
-│── di              -> NetworkModule.kt
+│── di             -> NetworkModule.kt
 │── model          -> IngredientUIModel.kt, RecipesModel.kt
-│── remote        -> RemoteApiService.kt, RemoteDataModel.kt
+│── remote         -> RemoteApiService.kt, RemoteDataModel.kt
 │── repository     -> RemoteRepository.kt
 │── ui
 │   ├── adapter    -> DetailScreenAdapter.kt, IngredientsAdapter.kt, RecipeListAdapter.kt
@@ -48,7 +48,7 @@ App (Module)
 ### **Testing Module**
 ```sh
 │── Android Test
-│   ├── ui    -> RecyclerViewTest.kt
+│   ├── ui         -> RecyclerViewTest.kt
 │── Test
 │   ├── network    -> ApiServiceTest.kt
 │   ├── repository -> RemoteRepositoryTest.kt
