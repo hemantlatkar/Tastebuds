@@ -59,7 +59,7 @@ App (Module)
 
 ## 🛣️ Included
 
-- Recipe fetching** via network calls
+- **Recipe fetching** via network calls
 - Created **Recipe Details Screen**
 - Set up **MVVM Architecture with Repository Pattern**
 - Integrated **Dagger Hilt** for Dependency Injection
