@@ -3,6 +3,9 @@ package com.example.tastebuds.ui.utils
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
+import com.bumptech.glide.request.transition.DrawableCrossFadeFactory
 import com.example.tastebuds.BuildConfig
 import com.example.tastebuds.R
 import com.example.tastebuds.model.IngredientUIModel
@@ -17,11 +20,14 @@ object Utils {
             return
         }
 
+        val factory = DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
+
         Glide.with(imageView.context)
             .load(imageUrl)
             .placeholder(R.drawable.img_placeholder)
             .error(R.drawable.img_error_image)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .transition(withCrossFade(factory))
             .into(imageView)
     }
 
