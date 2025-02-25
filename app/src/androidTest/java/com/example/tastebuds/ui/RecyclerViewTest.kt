@@ -20,10 +20,10 @@ class MyRecyclerViewTest {
     @Test
     fun testScrollToItem() {
         onView(withId(R.id.recyclerView)).perform(
-            RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(9)
+            RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(4)
         )
         onView(withId(R.id.recyclerView)).perform(
-            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(9, click())
+            RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(4, click())
         )
     }
 }

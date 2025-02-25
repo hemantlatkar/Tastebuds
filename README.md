@@ -81,7 +81,7 @@ App (Module)
 ---
 
 ## 🎥 Application Demo
-- 🎬 [View Demo](https://drive.google.com/file/d/1b5jIQfkqtwELpMtL8YCNQvgDrqOBXkGk/view?usp=sharing) – App Walkthrough
+- 🎬 [View Demo](https://drive.google.com/file/d/1fC56qTA4HF5d8z0-4hqZsPXXHOhIEJxu/view?usp=sharing) – App Walkthrough
 
 ---
 

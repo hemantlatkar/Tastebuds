@@ -34,6 +34,13 @@ object Utils {
     fun Meals.toPopularRecipeModel(): RecipesModel {
         val ingredientsUrl = BuildConfig.INGREDIENTS_BASE_URL
 
+        /**
+         * public infix fun <A, B> A.to(
+         *     that: B
+         * ): Pair<A, B>
+         *
+         * Creates a tuple of type Pair from this and that.
+         * */
         val ingredientsList = listOf(
             strIngredient1 to strMeasure1,
             strIngredient2 to strMeasure2,

@@ -11,12 +11,12 @@
     <color name="secondaryLight">#66FFF9</color>
 
     <!-- Background and Surface Colors -->
-    <color name="background">#F5F5F5</color>
+    <color name="background">#E6EBF2</color>
     <color name="surface">#FFFFFF</color>
 
     <!-- Text Colors -->
     <color name="textPrimary">#212121</color>
-    <color name="textSecondary">#757575</color>
+    <color name="textSecondary">#748189</color>
     <color name="textHint">#9E9E9E</color>
     <color name="progressbar">#B5B5B5</color>
 
@@ -32,7 +32,9 @@
     <!-- Black and White -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray">#2F2F2F</color>
+    <color name="gray">#475b66</color>
+    <color name="text_color">#0a2432</color>
+    <color name="text_color_two">#0A2533</color>
 
     <!-- Primary Blue Shades -->
     <color name="blue">#2196F3</color>       <!-- Standard Blue -->
@@ -51,5 +53,6 @@
     <!-- Darker & Muted Blues -->
     <color name="blueSteel">#4682B4</color>  <!-- Steel Blue -->
     <color name="blueNavy">#001F3F</color>   <!-- Navy Blue -->
-    <color name="buttonColor">#04A48D</color>   <!-- Navy Blue -->
+    <color name="buttonColor">#70b9be</color>   <!-- Navy Blue -->
+    <color name="txt_viewmore">#88C3C6</color>   <!-- Navy Blue -->
 </resources>

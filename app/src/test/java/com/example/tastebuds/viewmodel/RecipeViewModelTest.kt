@@ -57,7 +57,7 @@ class RecipeViewModelTest {
                 drinkAlternate = null,
                 strCategory = "Dessert",
                 strArea = "British",
-                description = "Pre-heat the oven to 180C/",
+                description = "Pre-heat the oven to 180C/350F/Gas 4...",
                 ingredients = listOf(
                     IngredientUIModel("Butter", "175g", "g"),
                     IngredientUIModel("Caster Sugar", "175g", "g"),
@@ -74,28 +74,28 @@ class RecipeViewModelTest {
             )
         )
 
-         whenever(repository.getPopularRecipes()).thenReturn(Resource.Success(fakeRecipes))
+        whenever(repository.getPopularRecipes()).thenReturn(Resource.Success(fakeRecipes))
 
-         viewModel.fetchRecipes()
-        advanceUntilIdle()
+        viewModel.fetchRecipes()
+        advanceUntilIdle() // coroutine complete execution
 
-         val captor = argumentCaptor<List<RecipesModel>>()
+        val captor = argumentCaptor<List<RecipesModel>>()
         verify(observer, Mockito.times(1)).onChanged(captor.capture())
 
-         assert(captor.lastValue == fakeRecipes)
+        assert(captor.lastValue == fakeRecipes)
     }
 
     @Test
     fun `fetchRecipes handles API failure gracefully`() = runTest {
-         val errorMessage = "API error"
+        val errorMessage = "API error"
         whenever(repository.getPopularRecipes()).thenReturn(Resource.Error(errorMessage))
 
-         viewModel.fetchRecipes()
+        viewModel.fetchRecipes()
         advanceUntilIdle()
 
-         val captor = argumentCaptor<List<RecipesModel>>()
+        val captor = argumentCaptor<List<RecipesModel>>()
         verify(observer, Mockito.times(1)).onChanged(captor.capture())
 
-         assert(captor.lastValue.isEmpty())
+        assert(captor.lastValue.isEmpty())
     }
 }

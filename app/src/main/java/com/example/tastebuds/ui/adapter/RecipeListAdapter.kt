@@ -1,8 +1,10 @@
 package com.example.tastebuds.ui.adapter
 
+import android.graphics.Typeface
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -36,11 +38,12 @@ class RecipeListAdapter(private var recipes: MutableList<RecipesModel>) :
                 val truncatedText = fullText.substring(0, maxCharLimit) + "..."
                 val spannableString = SpannableString(truncatedText + viewMoreText)
 
-                val viewMoreColor = ContextCompat.getColor(binding.root.context, R.color.buttonColor)
+                val viewMoreColor = ContextCompat.getColor(binding.root.context, R.color.txt_viewmore)
 
                 val startIndex = truncatedText.length
                 val endIndex = startIndex + viewMoreText.length
                 spannableString.setSpan(ForegroundColorSpan(viewMoreColor), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannableString.setSpan(StyleSpan(Typeface.BOLD), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
                 binding.txtDesc.text = spannableString
 

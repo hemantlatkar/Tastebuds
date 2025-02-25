@@ -28,14 +28,14 @@ class ApiServiceTest {
 
     @Test
     fun `API returns popular recipes`() = runBlocking {
-         val response = apiService.getPopularRecipes()
+        val response = apiService.getPopularRecipes()
 
-         assertNotNull(response)
+        assertNotNull(response)
         assertTrue(response.isSuccessful)
         assertNotNull(response.body())
 
-        val RemoteDataModel = response.body()
-        assertNotNull(RemoteDataModel?.meals)
-        assertTrue(RemoteDataModel!!.meals.isNotEmpty())
+        val remoteDataModel = response.body()
+        assertNotNull(remoteDataModel?.meals)
+        assertTrue(remoteDataModel!!.meals.isNotEmpty())
     }
 }

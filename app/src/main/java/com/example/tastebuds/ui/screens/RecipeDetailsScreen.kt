@@ -1,12 +1,15 @@
 package com.example.tastebuds.ui.screens
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tastebuds.databinding.RecipeDetailsScreenBinding
@@ -23,7 +26,10 @@ class RecipeDetailsScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.statusBarColor = Color.TRANSPARENT
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
+
         binding = RecipeDetailsScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -37,23 +43,21 @@ class RecipeDetailsScreen : AppCompatActivity() {
         binding.tvRecipeName.text = recipe.mealName
         binding.tvRecipeDescription.text = recipe.description
 
-        // underline
-        binding.lblWebsite.paintFlags = binding.lblWebsite.paintFlags or Paint.UNDERLINE_TEXT_FLAG
-
         binding.tvRecipeDescription.text = recipe.description
+        binding.tvTime.text = generateRandomTime()
 
         if (recipe.ingredients.isNullOrEmpty()) {
             binding.txtSecondTitle.visibility = View.GONE
             binding.txtCount.visibility = View.GONE
         } else {
-            binding.txtCount.text = "${recipe.ingredients.size} Items"
+            binding.txtCount.text = "${recipe.ingredients.size} Item"
             setupRecyclerView(recipe.ingredients)
         }
 
         binding.ivClose.setOnClickListener { finish() }
         binding.imgFavorite.setOnClickListener { it.isSelected = !it.isSelected }
 
-        binding.lblWebsite.setOnClickListener { openUrl(recipe.source) }
+        //binding.lblTime.setOnClickListener { openUrl(recipe.source) }
         binding.btnViewYoutube.setOnClickListener { openUrl(recipe.youtubeUrl) }
     }
 
@@ -72,4 +76,10 @@ class RecipeDetailsScreen : AppCompatActivity() {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it)))
         }
     }
+
+    fun generateRandomTime(): String {
+        val timeOptions = listOf(10, 15, 20, 25, 30, 35, 40, 45)
+        return " ${timeOptions.random()} Min"
+    }
+
 }
